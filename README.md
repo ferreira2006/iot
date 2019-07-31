@@ -11,4 +11,3 @@ Estudos sobre Internet das Coisas utilizando Arduíno, esp32 e sensores.
      https://github.com/ferreira2006/iot/blob/master/01_AP_Web_Rele.ino
 
 
-
