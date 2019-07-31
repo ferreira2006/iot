@@ -3,8 +3,8 @@
 
 ESP8266WebServer server;
 uint8_t pin_led = LED_BUILTIN;
-char* ssid = "id_wifi";
-char* password = "password";
+char* ssid = "id_wifi"; // colocar id da dere wifi
+char* password = "password"; // senha de conexão da rede wifi
 
 char webpage[] PROGMEM = R"=====(
 <html>
