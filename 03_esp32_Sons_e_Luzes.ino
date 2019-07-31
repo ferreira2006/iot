@@ -1,5 +1,5 @@
 #include "pitches.h"
-
+// Necessário o arquivo pitches.h para funcionar
 int led = 4;
 int pinoSom = 14;
 int melody[] = { NOTE_C4, NOTE_G3, NOTE_G3, NOTE_A3, NOTE_G3, 0, NOTE_B3, NOTE_C4 };
