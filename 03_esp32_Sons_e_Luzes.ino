@@ -1,7 +1,9 @@
-#include "pitches.h"
 // Necessário o arquivo pitches.h para funcionar
+#include "pitches.h"
+
 int led = 4;
-int pinoSom = 14;
+int pinoSom = 13; // Conectar fio positivo do autofalante no pino selecionado
+
 int melody[] = { NOTE_C4, NOTE_G3, NOTE_G3, NOTE_A3, NOTE_G3, 0, NOTE_B3, NOTE_C4 };
 int noteDurations[] = { 4, 8, 8, 4, 4, 4, 4, 4 };
 
@@ -12,7 +14,7 @@ void setup() {
 void loop() {
   tocaSom();
   delay(500);
- // pisca();
+  //pisca(100);
 }
 
 void tocaSom() {
