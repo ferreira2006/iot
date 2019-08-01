@@ -19,7 +19,7 @@ void setup() {
   Serial.begin(115200);
   pinMode(output13, OUTPUT);
   digitalWrite(output13, LOW);
-  Serial.print("Configurtando ESP no modo AP…");
+  Serial.print("Configurtando ESP no modo AP...");
   // Removee o parametro password se não quiser exigir a senha
   WiFi.softAP(ssid, password);
 
