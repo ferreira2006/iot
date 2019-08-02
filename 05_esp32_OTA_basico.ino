@@ -2,23 +2,48 @@
 #include <ESP8266mDNS.h>
 #include <WiFiUdp.h>
 #include <ArduinoOTA.h>
- 
+
+// Conexão com a rede wifi
 const char* ssid = "ESP32";
 const char* password = "12345678";
- 
+
+// IP fixo
+IPAddress local_IP(192, 168, 0, 112);
+IPAddress gateway(192, 168, 0, 1);
+IPAddress subnet(255, 255, 255, 0);
+IPAddress primaryDNS(8, 8, 8, 8);
+IPAddress secondaryDNS(8, 8, 4, 4);
+
 void setup() {
-  //Colocamos o led da placa como saida 
-  pinMode(LED_BUILTIN, OUTPUT);
   Serial.begin(115200);
   Serial.println("Iniciando...");
-  WiFi.mode(WIFI_STA);
-  WiFi.begin(ssid, password);
-  while (WiFi.waitForConnectResult() != WL_CONNECTED) {
-    Serial.println("Conexao falhou! Reiniciando...");
-    delay(5000);
-    ESP.restart();
-  }
- 
+
+  configuraRede();
+  
+  iniciaOTA();
+
+  // Inicio da codificação principal no setup();
+
+
+
+  // Fim da codificação principal no setup();
+  
+}
+
+void loop() {
+  // Verifica requisicoes OTA
+  ArduinoOTA.handle();
+
+  // Inicio da codificação principal no loop();
+
+
+  
+  // Fim da codificação principal no loop();
+
+}
+
+void iniciaOTA() {
+  
   ArduinoOTA.onStart([]() {
     Serial.println("Inicio...");
   });
@@ -37,17 +62,27 @@ void setup() {
     else if (error == OTA_END_ERROR) Serial.println("Falha no Fim");
   });
   ArduinoOTA.begin();
+}
+
+void condifuraRede(){
+  
+   // Configura dados da rede wifi
+  if (!WiFi.config(local_IP, gateway, subnet, primaryDNS, secondaryDNS)) {
+    Serial.println("STA Failed to configure");
+  }
+
+  WiFi.mode(WIFI_STA);
+  WiFi.begin(ssid, password);
+  
+  while (WiFi.waitForConnectResult() != WL_CONNECTED) {
+    Serial.println("Conexao falhou! Reiniciando...");
+    delay(5000);
+    ESP.restart();
+  }
+  
   Serial.println("Pronto");
   Serial.print("Endereco IP: ");
   Serial.println(WiFi.localIP());
+  
 }
- 
-void loop() {
-  // Mantenha esse trecho no inicio do laço "loop" - verifica requisicoes OTA
-  ArduinoOTA.handle();
 
-  digitalWrite(LED_BUILTIN, HIGH); // Aciona sinal
-  delay(2000); // Espera por 2 segundos
-  digitalWrite(LED_BUILTIN, LOW); // Apaga sinal
-  delay(2000);  // Espera por 2 segundos
-}
