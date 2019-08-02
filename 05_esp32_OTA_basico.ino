@@ -31,7 +31,7 @@ void setup() {
 }
 
 void loop() {
-  // Verifica requisicoes OTA
+  // Verifica se xiste requisicoes OTA na rede
   ArduinoOTA.handle();
 
   // Início da codificação principal no loop();
