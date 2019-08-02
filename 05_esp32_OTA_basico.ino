@@ -18,9 +18,9 @@ void setup() {
   Serial.begin(115200);
   Serial.println("Iniciando...");
 
-  configuraRede();
+  configurarRede();
   
-  iniciaOTA();
+  iniciarOTA();
 
   // Início da codificação principal no setup();
 
@@ -42,7 +42,7 @@ void loop() {
 
 }
 
-void iniciaOTA() {
+void iniciarOTA() {
   
   ArduinoOTA.onStart([]() {
     Serial.println("Inicio...");
@@ -64,7 +64,7 @@ void iniciaOTA() {
   ArduinoOTA.begin();
 }
 
-void configuraRede(){
+void configurarRede(){
   
    // Configura dados da rede wifi
   if (!WiFi.config(local_IP, gateway, subnet, primaryDNS, secondaryDNS)) {
