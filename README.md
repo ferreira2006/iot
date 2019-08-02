@@ -12,4 +12,13 @@ Estudos sobre Internet das Coisas utilizando Arduíno, esp32 e sensores.
 
 03 - ESP32 - Tocando sons com o esp32
 	https://github.com/ferreira2006/iot/blob/master/03_esp32_Sons_e_Luzes.ino
+		
+04 - ESP32 - Controle de pino (LED) via Web Server HTML, JavaScript e AJAX Webpage
+	https://github.com/ferreira2006/iot/blob/master/04_esp32_WebServer_HTML_JavaScript_AJAX_Webpages.ino
+	
+05 - ESP32 - OTA básico - Codificação para criar a porta na rede para atualização do esp via rede
+	https://github.com/ferreira2006/iot/blob/master/05_esp32_OTA_basico.ino
+	
+06 - ESP32 - gravação de códifo via wifi (OTA) com exemplo de código blink
+	https://github.com/ferreira2006/iot/blob/master/05_esp32_OTA_basico_blink.ino
 
