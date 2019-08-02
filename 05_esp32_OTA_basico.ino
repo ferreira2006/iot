@@ -3,11 +3,11 @@
 #include <WiFiUdp.h>
 #include <ArduinoOTA.h>
 
-// Conexão com a rede wifi
+// Conexão com a rede wifi local
 const char* ssid = "ESP32";
 const char* password = "12345678";
 
-// IP fixo
+// Parâmetros para uso de IP fixo
 IPAddress local_IP(192, 168, 0, 112);
 IPAddress gateway(192, 168, 0, 1);
 IPAddress subnet(255, 255, 255, 0);
@@ -22,7 +22,7 @@ void setup() {
   
   iniciaOTA();
 
-  // Inicio da codificação principal no setup();
+  // Início da codificação principal no setup();
 
 
 
@@ -34,7 +34,7 @@ void loop() {
   // Verifica requisicoes OTA
   ArduinoOTA.handle();
 
-  // Inicio da codificação principal no loop();
+  // Início da codificação principal no loop();
 
 
   
@@ -64,7 +64,7 @@ void iniciaOTA() {
   ArduinoOTA.begin();
 }
 
-void condifuraRede(){
+void configuraRede(){
   
    // Configura dados da rede wifi
   if (!WiFi.config(local_IP, gateway, subnet, primaryDNS, secondaryDNS)) {
