@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ESP32 Web Server</title>
+ 
+</head>
+<body>
+<p> Status: <span id="led-state">__</span> </p>
+<button onclick="ligarRele()"> ON/OFF </button>
+</body>
+<script>
+function ligarRele(){
+  console.log("Botão foi acionado!");
+  var xhr = new XMLHttpRequest();
+  var url = "/ledstate";
+  xhr.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("led-state").innerHTML = this.responseText;
+    }
+  };
+
+  xhr.open("GET", url, true);
+  xhr.send();
+};
+document.addEventListener('DOMContentLoaded', ligarRele, false);
+</script>
+</html>
