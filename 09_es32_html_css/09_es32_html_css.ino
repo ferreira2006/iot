@@ -33,7 +33,6 @@ void setup(){
   server.on("/favicon.ico", HTTP_GET, [](AsyncWebServerRequest *request){
     request->send(SPIFFS, "/favicon.png", "image/png");
   });
-  
  
   server.begin();
 }
