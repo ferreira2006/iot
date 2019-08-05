@@ -29,6 +29,11 @@ void setup(){
   server.on("/dashboard.css", HTTP_GET, [](AsyncWebServerRequest *request){
     request->send(SPIFFS, "/dashboard.css", "text/css");
   });
+
+  server.on("/favicon.ico", HTTP_GET, [](AsyncWebServerRequest *request){
+    request->send(SPIFFS, "/favicon.png", "image/png");
+  });
+  
  
   server.begin();
 }
