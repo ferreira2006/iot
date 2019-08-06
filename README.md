@@ -28,4 +28,5 @@ https://github.com/ferreira2006/iot/blob/master/07_esp32_Web_Server_JavaScript_A
 08 - ESP32 - WebServer Javascript Ajax com IP fixo e pagina html gravado na memória do esp atualizadao via OTA
 https://github.com/ferreira2006/iot/blob/master/08_esp32_Server_WebPage_Spiffs_IpFixo_OTA/08_esp32_Server_WebPage_Spiffs_IpFixo_OTA.ino
 
-09 - ESP32 - 
+09 - ESP32 - HTML Web Server, CSS e favicon via spiffs
+	https://github.com/ferreira2006/iot/blob/master/09_es32_html_css/09_es32_html_css_favicon.ino
