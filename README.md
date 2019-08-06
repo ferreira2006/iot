@@ -19,6 +19,9 @@ Estudos sobre Internet das Coisas utilizando Arduíno, esp32 e sensores.
 05 - ESP32 - OTA básico - Codificação para criar a porta na rede para atualização do esp via rede
 	https://github.com/ferreira2006/iot/blob/master/05_esp32_OTA_basico.ino
 	
-06 - ESP32 - gravação de códifo via wifi (OTA) com exemplo de código blink
+06 - ESP32 - Gravação de códifo via wifi (OTA) com exemplo de código blink
 	https://github.com/ferreira2006/iot/blob/master/05_esp32_OTA_basico_blink.ino
+07 - ESP32 - WebServer Javascript Ajax com IP fixo e pagina html gravado na memória do esp 
+ https://github.com/ferreira2006/iot/blob/master/07_esp32_Web_Server_JavaScript_AJAX_WebPage_Spiffs_IpFixo/07_esp32_Web_Server_JavaScript_AJAX_WebPage_Spiffs_IpFixo.ino
 
+08 - ESP32 - 
