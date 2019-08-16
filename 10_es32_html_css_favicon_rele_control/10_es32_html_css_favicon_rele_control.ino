@@ -4,13 +4,17 @@
  
 const char* ssid = "ESP32";
 const char* password =  "12345678";
-
-int motorPin = LED_BUILTIN;
  
 AsyncWebServer server(80);
 // http://localIP/dashboard
+
+int relayPin = LED_BUILTIN;
  
 void setup(){
+
+  pinMode(relayPin, OUTPUT);
+  digitalWrite(relayPin, LOW);
+  
   Serial.begin(115200);
  
   SPIFFS.begin();
@@ -34,6 +38,25 @@ void setup(){
 
   server.on("/favicon.ico", HTTP_GET, [](AsyncWebServerRequest *request){
     request->send(SPIFFS, "/favicon.png", "image/png");
+  });
+
+server.on("/relay/off", HTTP_PATCH, [](AsyncWebServerRequest *request){
+    request->send(200, "text/plain", "ok");
+    digitalWrite(relayPin, LOW);
+  });
+  
+  server.on("/relay/on", HTTP_PATCH, [](AsyncWebServerRequest *request){
+    request->send(200, "text/plain","ok");
+    digitalWrite(relayPin, HIGH);
+  });
+  
+  server.on("/relay/toggle", HTTP_PATCH, [](AsyncWebServerRequest *request){
+    request->send(200, "text/plain","ok");
+    digitalWrite(relayPin, !digitalRead(relayPin));
+  });
+  
+  server.on("/relay", HTTP_GET, [](AsyncWebServerRequest *request){
+    request->send(200, "text/plain", String(digitalRead(relayPin)));
   });
  
   server.begin();
