@@ -30,3 +30,9 @@ https://github.com/ferreira2006/iot/blob/master/08_esp32_Server_WebPage_Spiffs_I
 
 09 - ESP32 - HTML Web Server, CSS e favicon via spiffs
 	https://github.com/ferreira2006/iot/blob/master/09_es32_html_css/09_es32_html_css_favicon.ino
+
+10 - ESP32 - HTML - CSS - Favicon -Rele - Control
+https://github.com/ferreira2006/iot/blob/master/10_es32_html_css_favicon_rele_control/10_es32_html_css_favicon_rele_control.ino
+
+11 - ESP32 NODEMCU - Webserver - Rele - Control - with ESPLORER
+https://github.com/ferreira2006/iot/blob/master/11_esp32_nodemcu_Webserver_rele_control_ESPLORER/init.lua
